@@ -86,6 +86,34 @@ alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
 
 // Step 4 - Age
 // Your code goes here
+let age = prompt('Is this food for a child or an adult? Please enter your age.');
+
+let confirm = "";
+if (age >= 18) {
+  confirm = prompt(
+    `One adult sized ${selectedSubmenu[subMenu-1]} ${selectedFood} will be prepared for you.
+    That will be €15. Are you sure you want to proceed with the order?
+    
+    Enter a number to confirm:
+    1 - Yes
+    2 - No`);
+} else {
+  confirm = prompt(
+    `One child sized ${selectedSubmenu[subMenu-1]} ${selectedFood} will be prepared for you.
+    That will be €8. Are you sure you want to proceed with the order?
+    
+    Enter a number to confirm:
+    1 - Yes
+    2 - No`);
+};
+
 
 // Step 5 - Order confirmation
 // Your code goes here
+if (confirm === "1") {
+  alert('Thank you for your order! Your meal will be prepared. See you soon!');
+} else if (confirm === "2") {
+  alert ('No problem, come back and order anytime you want.');
+} else {
+  alert('Invalid choice. Please choose number 1 or 2.');
+};

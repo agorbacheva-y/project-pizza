@@ -40,6 +40,7 @@ alert(`You've chosen ${selectedFood}!`);
 // Step 3 - Subtype choice
 // Your code goes here
 let subMenu = "";
+let selectedSubmenu = "";
 
 switch(selectedFood) {
   case "Pizza":
@@ -50,6 +51,7 @@ switch(selectedFood) {
         2 - Pepperoni
         3 - Vegetable`
     );
+    selectedSubmenu = ["Margherita", "Pepperoni", "Vegetable"];
     break;
 
   case "Pasta":
@@ -60,6 +62,7 @@ switch(selectedFood) {
         2 - Seafood
         3 - Carbonara`
     );
+    selectedSubmenu = ["Bolognese", "Seafood", "Carbonara"];
     break;
 
   case "Salad":
@@ -70,12 +73,16 @@ switch(selectedFood) {
         2 - Greek
         3 - Cobb`
     );
+    selectedSubmenu = ["Caesar", "Greek", "Cobb"];
     break;
       
   default:
-      alert('Invalid choice. Please choose a number between 1 and 3.');
-      exit(1);
-}
+    alert('Invalid choice. Please choose a number between 1 and 3.');
+    exit(1);
+};
+
+alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
+
 
 // Step 4 - Age
 // Your code goes here

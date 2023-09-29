@@ -29,6 +29,7 @@ if (foodMenu === "1") {
   selectedFood = "Salad";
 } else {
   alert('Invalid choice. Please choose a number between 1 and 3.');
+  exit(1);
 }
 
 alert(`You've chosen ${selectedFood}!`);
@@ -69,6 +70,7 @@ if (selectedFood === "Pizza") {
   selectedSubmenu = ["Caesar", "Greek", "Cobb"];
 } else {
   alert('Invalid choice. Please choose a number between 1 and 3.');
+  exit(1);
 }
 
 
@@ -76,6 +78,7 @@ if (subMenu === "1" || "2" || "3" ) {
   alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
 } else {
   alert('Invalid choice. Please choose a number between 1 and 3.');
+  exit(1);
 }
 
 
@@ -102,6 +105,7 @@ if (age >= 18) {
     2 - No`);
 } else {
   alert('Invalid entry. Please enter a valid number.');
+  exit(1);
 };
 
 // // Step 5 - Order confirmation
@@ -112,4 +116,5 @@ if (confirm === "1") {
   alert ('No problem, come back and order anytime you want.');
 } else {
   alert('Invalid choice. Please choose number 1 or 2.');
+  exit(1);
 };

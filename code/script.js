@@ -71,7 +71,12 @@ if (selectedFood === "Pizza") {
   alert('Invalid choice. Please choose a number between 1 and 3.');
 }
 
-alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
+
+if (subMenu === "1" || "2" || "3" ) {
+  alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
+} else {
+  alert('Invalid choice. Please choose a number between 1 and 3.');
+}
 
 
 // // Step 4 - Age

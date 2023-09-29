@@ -81,7 +81,17 @@ switch (selectedFood) {
     exit(1);
 };
 
-alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
+switch (submenu) {
+  case "1":
+  case "2":
+  case "3":
+    alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
+    break;
+  
+  default:
+    alert('Invalid choice. Please choose a number between 1 and 3.');
+    exit(1);
+};
 
 // Step 4 - Age
 let age = parseFloat(prompt('Is this food for a child or an adult? Please enter your age.'));

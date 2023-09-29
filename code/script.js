@@ -68,14 +68,9 @@ if (selectedFood === "Pizza") {
       3 - Cobb`
   );
   selectedSubmenu = ["Caesar", "Greek", "Cobb"];
-} else {
-  alert('Invalid choice. Please choose a number between 1 and 3.');
-  exit(1);
-}
+} 
 
-console.log(subMenu);
-
-if (subMenu === 1 || 2 || 3 ) {
+if (subMenu === "1" || "2" || "3" ) {
   alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
 } else {
   alert('Invalid choice. Please choose a number between 1 and 3.');

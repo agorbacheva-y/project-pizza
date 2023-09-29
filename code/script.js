@@ -39,7 +39,7 @@ alert(`You've chosen ${selectedFood}!`);
 // // Step 3 - Subtype choice
 // // Your code goes here
 let subMenu = "";
-let selectedSubmenu = "";
+let selectedSubmenu = [];
 
 if (selectedFood === "Pizza") {
   subMenu = prompt(
@@ -73,8 +73,9 @@ if (selectedFood === "Pizza") {
   exit(1);
 }
 
+console.log(subMenu);
 
-if (subMenu === "1" || "2" || "3" ) {
+if (subMenu === 1 || 2 || 3 ) {
   alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
 } else {
   alert('Invalid choice. Please choose a number between 1 and 3.');

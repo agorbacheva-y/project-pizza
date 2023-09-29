@@ -6,7 +6,12 @@ alert(
 );
 
 const username = prompt('Please enter your name.');
-alert(`Hi ${username}!`);
+if (username) {
+  alert(`Hi ${username}!`);
+} else {
+  alert(`Please enter your name.`);
+  exit(1);
+}
 
 
 // Step 2 - Food choice

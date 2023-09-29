@@ -84,11 +84,12 @@ switch (selectedFood) {
 alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
 
 // Step 4 - Age
-let age = prompt('Is this food for a child or an adult? Please enter your age.');
+let age = parseFloat(prompt('Is this food for a child or an adult? Please enter your age.'));
+console.log(age);
 
 let confirm = "";
-switch (age) {
-  case (age >= 18):
+switch (true) {
+  case age >= 18:
     confirm = prompt(
       `One adult sized ${selectedSubmenu[subMenu-1]} ${selectedFood} will be prepared for you.
       That will be €15. Are you sure you want to proceed with the order?
@@ -98,7 +99,7 @@ switch (age) {
       2 - No`);
     break;
   
-  case (age < 18):
+  case age < 18:
     confirm = prompt(
       `One child sized ${selectedSubmenu[subMenu-1]} ${selectedFood} will be prepared for you.
       That will be €8. Are you sure you want to proceed with the order?

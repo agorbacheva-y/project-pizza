@@ -6,8 +6,8 @@ alert(
 );
 
 const username = prompt('Please enter your name.');
-
 alert(`Hi ${username}!`);
+
 
 // Step 2 - Food choice
 const foodMenu = prompt(
@@ -17,6 +17,7 @@ const foodMenu = prompt(
   3 - Salad`
 );
 
+// assign value to selectedFood depending on what nr user picked for foodMenu
 let selectedFood = "";
 switch (foodMenu) {
   case "1":
@@ -38,10 +39,13 @@ switch (foodMenu) {
 
 alert(`You've chosen ${selectedFood}!`);
 
+
 // Step 3 - Subtype choice
 let subMenu = "";
 let selectedSubmenu = "";
 
+// show prompt of submenu items depending on what selectedFood is
+// and save array of corresponding submenu items
 switch (selectedFood) {
   case "Pizza":
     subMenu = prompt(
@@ -81,6 +85,7 @@ switch (selectedFood) {
     exit(1);
 };
 
+// alert with selected submenu item
 switch (subMenu) {
   case "1":
   case "2":
@@ -93,10 +98,12 @@ switch (subMenu) {
     exit(1);
 };
 
+
 // Step 4 - Age
 let age = parseFloat(prompt('Is this food for a child or an adult? Please enter your age.'));
 console.log(age);
 
+// confirm menu choice and price depending on user's age
 let confirm = "";
 switch (true) {
   case age >= 18:
@@ -123,6 +130,7 @@ switch (true) {
     alert('Invalid entry. Please enter a valid number.');
     exit(1);
 };
+
 
 // Step 5 - Order confirmation
 switch (confirm) {

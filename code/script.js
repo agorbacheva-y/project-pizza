@@ -1,18 +1,15 @@
 // Start here
 
 // Step 1 - Welcome and introduction
-// Your code goes here
 alert(
   `Welcome to our Javascript Pizzeria. Ready to Start? - Click 'OK' to begin.`
 );
 
 const username = prompt('Please enter your name.');
-
 alert(`Hi ${username}!`);
 
 
 // Step 2 - Food choice
-// Your code goes here
 const foodMenu = prompt(
   `What type of food would you like to order?
   1 - Pizza
@@ -20,6 +17,7 @@ const foodMenu = prompt(
   3 - Salad`
 );
 
+// assign value to selectedFood depending on what nr user picked for foodMenu
 let selectedFood = "";
 if (foodMenu === "1") {
   selectedFood = "Pizza";
@@ -37,10 +35,11 @@ alert(`You've chosen ${selectedFood}!`);
 
 
 // // Step 3 - Subtype choice
-// // Your code goes here
 let subMenu = "";
 let selectedSubmenu = [];
 
+// show prompt of submenu items depending on what selectedFood is
+// and save array of corresponding submenu items
 if (selectedFood === "Pizza") {
   subMenu = prompt(
     `Select a ${selectedFood} type:
@@ -70,7 +69,8 @@ if (selectedFood === "Pizza") {
   selectedSubmenu = ["Caesar", "Greek", "Cobb"];
 } 
 
-if (subMenu === "1" || "2" || "3" ) {
+// alert with selected submenu item
+if (subMenu === "1" || subMenu === "2" || subMenu === "3" ) {
   alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
 } else {
   alert('Invalid choice. Please choose a number between 1 and 3.');
@@ -79,22 +79,22 @@ if (subMenu === "1" || "2" || "3" ) {
 
 
 // // Step 4 - Age
-// // Your code goes here
-let age = prompt('Is this food for a child or an adult? Please enter your age.');
+let age = parseInt(prompt('Is this food for a child or an adult? Please enter your age.'));
 
+// confirm menu choice and price depending on user's age
 let confirm = "";
 if (age >= 18) {
   confirm = prompt(
     `One adult sized ${selectedSubmenu[subMenu-1]} ${selectedFood} will be prepared for you. 
-    That will be €15. Are you sure you want to proceed with the order?
+    Your total is €15. Are you sure you want to proceed with the order?
     
     Enter a number to confirm:
     1 - Yes
     2 - No`);
-} else if (age < 18) {
+} else if (age > 0) {
   confirm = prompt(
     `One child sized ${selectedSubmenu[subMenu-1]} ${selectedFood} will be prepared for you. 
-    That will be €8. Are you sure you want to proceed with the order?
+    Your total is €8. Are you sure you want to proceed with the order?
     
     Enter a number to confirm:
     1 - Yes
@@ -104,8 +104,8 @@ if (age >= 18) {
   exit(1);
 };
 
+
 // // Step 5 - Order confirmation
-// // Your code goes here
 if (confirm === "1") {
   alert('Thank you for your order! Your meal will be prepared. See you soon!');
 } else if (confirm === "2") {

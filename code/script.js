@@ -10,7 +10,7 @@ alert(`Hi ${username}!`);
 
 
 // Step 2 - Food choice
-const foodMenu = prompt(
+let foodMenu = prompt(
   `What type of food would you like to order?
   1 - Pizza
   2 - Pasta
@@ -19,16 +19,17 @@ const foodMenu = prompt(
 
 // assign value to selectedFood depending on what nr user picked for foodMenu
 let selectedFood = "";
-if (foodMenu === "1") {
-  selectedFood = "Pizza";
-} else if (foodMenu === "2") {
-  selectedFood = "Pasta";
-} else if (foodMenu === "3") {
-  selectedFood = "Salad";
-} else {
-  alert('Invalid choice. Please choose a number between 1 and 3.');
-  exit(1);
-}
+  if (foodMenu === "1") {
+    selectedFood = "Pizza";
+  } else if (foodMenu === "2") {
+    selectedFood = "Pasta";
+  } else if (foodMenu === "3") {
+    selectedFood = "Salad";
+  } else {
+    alert('Invalid choice. Please choose a number between 1 and 3.');
+    exit(1);
+  }
+
 
 alert(`You've chosen ${selectedFood}!`);
 //console.log(selectedFood);

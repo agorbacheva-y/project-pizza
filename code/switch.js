@@ -81,7 +81,7 @@ switch (selectedFood) {
     exit(1);
 };
 
-switch (submenu) {
+switch (subMenu) {
   case "1":
   case "2":
   case "3":

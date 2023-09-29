@@ -20,20 +20,16 @@ const foodMenu = prompt(
 );
 
 let selectedFood = "";
-switch(foodMenu) {
-  case "1":
-    selectedFood = "Pizza";
-    break;
-  case "2":
-    selectedFood = "Pasta";
-    break;
-  case "3":
-    selectedFood = "Salad";
-    break;
-  default:
-    alert('Invalid choice. Please choose a number between 1 and 3.');
-    exit(1);
-};
+if (foodMenu === "1") {
+  selectedFood = "Pizza";
+} else if (foodMenu === "2") {
+  selectedFood = "Pasta";
+} else if (foodMenu === "3") {
+  selectedFood = "Salad";
+} else {
+  alert('Invalid choice. Please choose a number between 1 and 3.');
+  exit(1);
+}
 
 alert(`You've chosen ${selectedFood}!`);
 
@@ -42,47 +38,39 @@ alert(`You've chosen ${selectedFood}!`);
 let subMenu = "";
 let selectedSubmenu = "";
 
-switch(selectedFood) {
-  case "Pizza":
-    subMenu = prompt(
-      `Select a ${selectedFood} type:
-        Enter a number:
-        1 - Margherita
-        2 - Pepperoni
-        3 - Vegetable`
-    );
-    selectedSubmenu = ["Margherita", "Pepperoni", "Vegetable"];
-    break;
-
-  case "Pasta":
-    subMenu = prompt(
-      `Select a ${selectedFood} type:
-        Enter a number:
-        1 - Bolognese
-        2 - Seafood
-        3 - Carbonara`
-    );
-    selectedSubmenu = ["Bolognese", "Seafood", "Carbonara"];
-    break;
-
-  case "Salad":
-    subMenu = prompt(
-      `Select a ${selectedFood} type:
-        Enter a number:
-        1 - Caesar
-        2 - Greek
-        3 - Cobb`
-    );
-    selectedSubmenu = ["Caesar", "Greek", "Cobb"];
-    break;
-      
-  default:
-    alert('Invalid choice. Please choose a number between 1 and 3.');
-    exit(1);
-};
+if (selectedSubmenu === "Pizza") {
+  subMenu = prompt(
+    `Select a ${selectedFood} type:
+      Enter a number:
+      1 - Margherita
+      2 - Pepperoni
+      3 - Vegetable`
+  );
+  selectedSubmenu = ["Margherita", "Pepperoni", "Vegetable"];
+} else if (selectedSubmenu === "Pasta") {
+  subMenu = prompt(
+    `Select a ${selectedFood} type:
+      Enter a number:
+      1 - Bolognese
+      2 - Seafood
+      3 - Carbonara`
+  );
+  selectedSubmenu = ["Bolognese", "Seafood", "Carbonara"];
+} else if (selectedSubmenu === "Salad") {
+  subMenu = prompt(
+    `Select a ${selectedFood} type:
+      Enter a number:
+      1 - Caesar
+      2 - Greek
+      3 - Cobb`
+  );
+  selectedSubmenu = ["Caesar", "Greek", "Cobb"];
+} else {
+  alert('Invalid choice. Please choose a number between 1 and 3.');
+  exit(1);
+}
 
 alert(`You've chosen ${selectedSubmenu[subMenu-1]}!`);
-
 
 // Step 4 - Age
 // Your code goes here
@@ -97,7 +85,7 @@ if (age >= 18) {
     Enter a number to confirm:
     1 - Yes
     2 - No`);
-} else {
+} else if (age < 18) {
   confirm = prompt(
     `One child sized ${selectedSubmenu[subMenu-1]} ${selectedFood} will be prepared for you.
     That will be €8. Are you sure you want to proceed with the order?
@@ -105,8 +93,10 @@ if (age >= 18) {
     Enter a number to confirm:
     1 - Yes
     2 - No`);
+} else {
+  alert('Invalid entry. Please enter a valid number.');
+  exit(1);
 };
-
 
 // Step 5 - Order confirmation
 // Your code goes here
